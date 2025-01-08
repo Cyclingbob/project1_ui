@@ -11,8 +11,7 @@ def get_connected_devices():
         linked_path = device_dir + "/" + file
         actual_file = os.readlink(linked_path)
         block_device = "/dev/" + actual_file.split("/")[2]
-        connected_devices.append((file, block_device)) #name of the usb disk, then the
-sdx (block device)
+        connected_devices.append((file, block_device)) #name of the usb disk, then the sdx (block device)
     return connected_devices
 def get_mounted(): #all mounts remembered by the pi, even if they've since been disconnected
     mount_file = "/proc/mounts"
